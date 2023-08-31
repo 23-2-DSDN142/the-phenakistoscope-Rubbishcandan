@@ -1,7 +1,7 @@
 const SLICE_COUNT = 10;
 
 function setup_pScope(pScope){
-  pScope.output_mode(ANIMATED_DISK);
+  pScope.output_mode(STATIC_FRAME);
   pScope.scale_for_screen(true);
   pScope.draw_layer_boundaries(false);
   pScope.set_direction(CCW);
@@ -24,12 +24,12 @@ function setup_layers(pScope){
 function Moon(x, y, animation, pScope){
   
   //scale(animation.frame*animation.wave); 
-  ellipse(600,0+animation.wave(0.2)*350,80,80); // draw head
-  //fill(30);
-  //ellipse(-10,-10,10,10); //draw eye
-  //ellipse(10,-10,10,10); // draw eye
-  //arc(0,10,20,10,0,180); // draw mouth
-  
+  fill('#909090')
+  ellipse(0,-500,80,80); // for animation 0+animation.wave(0.2)*350
+  fill('#303B45')
+  noStroke()
+  ellipse(-15,-500,10,10)
+  ellipse(10,-490,10,10)
 }
 
 function Atmosphere(x, y, animation, pScope){
