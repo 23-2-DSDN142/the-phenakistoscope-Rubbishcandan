@@ -1,35 +1,47 @@
 const SLICE_COUNT = 10;
+let r = 150
+
 
 function setup_pScope(pScope){
-  pScope.output_mode(STATIC_FRAME);
+  pScope.output_mode(ANIMATED_FRAME);
   pScope.scale_for_screen(true);
-  pScope.draw_layer_boundaries(false);
+  pScope.draw_layer_boundaries(true);
   pScope.set_direction(CCW);
   pScope.set_slice_count(SLICE_COUNT);
 }
 
 function setup_layers(pScope){
-
+ 
   new PLayer(null, 0);  //lets us draw the whole circle background, ignoring the boundaries
 
-  var layer1 = new PLayer(Moon );
+  var layer1 = new PLayer(Moon);
   layer1.mode( RING );
   layer1.set_boundary( 200, 1000 );
 
   var layer2 = new PLayer(Atmosphere);
   layer2.mode( RING );
   layer2.set_boundary( 0, 400 );
+
+
 }
 
-function Moon(x, y, animation, pScope){
-  
+function Moon(animation, pScope){
+  noFill()
+  circle (0,0, r*10)
   //scale(animation.frame*animation.wave); 
-  fill('#909090')
-  ellipse(0,-500,80,80); // for animation 0+animation.wave(0.2)*350
-  fill('#303B45')
-  noStroke()
-  ellipse(-15,-500,10,10)
-  ellipse(10,-490,10,10)
+  strokeWeight(32)
+  stroke('#909090')
+  let angle = 0
+  let x = r * cos(angle);
+  let y = r * sin(angle);
+  point(x,y); // for animation 0+animation.wave(0.2)*350
+
+  angle += 0.01;
+  //fill('#303B45')
+  //noStroke()
+ // ellipse(horozontalMovement,verticalMovement,10,10)
+ // ellipse(horozontalMovement,verticalMovement,10,10)
+  
 }
 
 function Atmosphere(x, y, animation, pScope){
