@@ -86,6 +86,7 @@ function Planet(x, y, animation, pScope) {
   triangle(0,275,-10,260,10,260)
   fill('#928e85')
   triangle (0,270,-10,250,10,250)
+  //lerp colour with circle rings 
 
   fill(255)
   rect(-50, -300 - animation.wave() * 10, 100, 20) // .wave is a cosine wave btw
@@ -93,11 +94,11 @@ function Planet(x, y, animation, pScope) {
 }
 
 function Stars (x,y, animation, pScope){
-
+//offset with animation.wave or different frequency 
   
   strokeWeight(15)
   stroke(255)
   point((StarLocationX[2]),(StarLocationY[3]))
-  point((StarLocationX[1],StarLocationY[2]))
+  point((StarLocationX[1],StarLocationY[3]))
 
 }
