@@ -37,18 +37,18 @@ function setup_layers(pScope) {
 
 function Moon(animation, pScope) {
   let r = 600
-  noFill()
   //circle (0,0, r*2)
   strokeWeight(64)
   stroke('#909090')
   let x = r * cos(angle);
   let y = r * sin(angle);
   point(x, y);
-  angle += 0.5;
+  angle += 0; //0.5 is optimal speed 
   fill('#303B45')
   noStroke()
-  ellipse(x + 10, y, 10, 10)
-  ellipse(x + 20, y + 10, 10, 10)
+  ellipse(x - 10, y, 20, 20)
+  ellipse(x + 15, y + 10, 15, 15)
+  ellipse(x + 10, y - 15, 12.5, 12.5)
 
 }
 
@@ -62,6 +62,7 @@ function Atmosphere(x, y, animation, pScope) {
   fill(66, 135, 245)
   noStroke();
   arc(x, y, 600, 600, backgroundArcStart, backgroundArcEnd); // draws "pizza slice" in the background
+  
 
   fill(255)
   rect(-50, -300 - animation.wave() * 10, 100, 20) // .wave is a cosine wave btw
@@ -73,7 +74,7 @@ function Stars (x,y, animation, pScope){
   
   strokeWeight(15)
   stroke(255)
-  point((StarLocationX[2]),(random(StarLocationY)))
- 
+  point((StarLocationX[2]),(StarLocationY[3]))
+  
 
 }
