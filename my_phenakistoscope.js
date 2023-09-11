@@ -34,8 +34,8 @@ function setup_layers(pScope) {
   layer3.set_boundary(-400,1000);
 
   var layer4 = new PLayer(Asteroids);
-  layer4.mode(SWIRL(1));
-  layer4.set_boundary(400,1000)
+  layer4.mode(SWIRL(2));
+  layer4.set_boundary(350,1000)
   
 
 }
@@ -44,8 +44,8 @@ function Moon(animation, pScope) {
  
   noFill()
   stroke(255)
-  strokeWeight(1)
-  circle (0,0, r*2)
+  strokeWeight(0.05)
+  circle (0,0,1200)
 
   strokeWeight(64)
   stroke('#909090')
@@ -130,9 +130,11 @@ function Stars (x,y, animation, pScope){
 }
 
 function Asteroids (x,y, animation, pScope){
-
-scale(1 - animation.wave() * 0.5)
- fill(255)
+  var outer = color('#5f4e43')
+  var inner = color('#FC8A17')
+  let asteroidColour = lerpColor(inner,outer,animation.frame * 10)
+ scale(1 + animation.frame * 0.01)
+ fill(asteroidColour)
  ellipse(x,y,40,40)
  
 }
