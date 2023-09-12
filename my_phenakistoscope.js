@@ -105,9 +105,13 @@ function Planet(x, y, animation, pScope) {
   fill('#ebff7d')
   circle(0,0,55)
   fill(255)
-  triangle(0,275,-10,260,10,260)
+  triangle(0,275,-5,260,5,260)
   fill('#928e85')
-  triangle (0,270,-10,250,10,250)
+  triangle (0,270,-10,250,10,250)  
+  fill(255)
+  triangle(0,-275,5,-260,-5,-260)
+  fill('#928e85')
+  triangle (0,-270,10,-250,-10,-250)
   
   
 
@@ -134,6 +138,8 @@ function Asteroids (x,y, animation, pScope){
   var inner = color('#FC8A17')
   let asteroidColour = lerpColor(inner,outer,animation.frame * 10)
  scale(1 + animation.frame * 0.01)
+ fill('#12c5e0')
+ ellipse(x,y-10,45,65)
  fill(asteroidColour)
  ellipse(x,y,40,40)
  
