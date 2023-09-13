@@ -84,7 +84,7 @@ function Planet(x, y, animation, pScope) {
   //section for black holes 
   fill('#ff4e01') //orange
   ellipse(0, -325 - animation.wave() * 10, 70, 35) //ecllipses are black holes and the wave is to wiggle them
-  fill('#FFFF00') //yellow 
+  fill('#FFFF00') //yellow
   ellipse(0, -325 - animation.wave() * 10, 60, 25)
   fill(0) // black
   ellipse(0, -325 - animation.wave() * 10, 50, 15) // .wave is a cosine wave btw
