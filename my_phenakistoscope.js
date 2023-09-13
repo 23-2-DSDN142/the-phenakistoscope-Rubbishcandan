@@ -76,46 +76,46 @@ function Planet(x, y, animation, pScope) {
   let interB = lerpColor(start,end,0.6)
   let interC = lerpColor(start,end,0.9)
 
-  fill('#ff4e01')
-  ellipse(0, -325 - animation.wave() * 10, 0, 35)
-  fill('#FFFF00')
+  fill('#ff4e01') //orange
+  ellipse(0, -325 - animation.wave() * 10, 70, 35)
+  fill('#FFFF00') //yellow 
   ellipse(0, -325 - animation.wave() * 10, 60, 25)
-  fill(0)
+  fill(0) // black
   ellipse(0, -325 - animation.wave() * 10, 50, 15) // .wave is a cosine wave btw
   
- 
+ //Section below is for the Central planet 
   fill('#4287f5')
-  noStroke();
+ // noStroke();
   //arc(x, y, 600, 600, backgroundArcStart, backgroundArcEnd); // draws "pizza slice" in the background
-  fill(interC)
+  fill(interC) //outer atmosphere, darkest blue 
   circle(0,0,600)
-  fill(interB)
+  fill(interB)//outer atmosphere, dark blue 
   circle(0,0,575)
-  fill(interA)
+  fill(interA)//outer atmosphere, lighter blue 
   circle(0,0,550)
-  fill('#4287f5')
+  fill('#4287f5')//inner atmosphere, light blue
   circle(0,0,525)
-  fill('#667E2C')
+  fill('#667E2C')//outer planet, green 
   circle(0,0,500)
-  fill('#928e85')
+  fill('#928e85')//outer planet, grey 
   circle(0,0,425)
-  fill('#964B00')
+  fill('#964B00')//inner planet,orangy red
   circle(0,0,350)
-  fill('#BE5504')
+  fill('#BE5504')//inner planet,reddish orange
   circle(0,0,250)
-  fill('#ff4e01')
+  fill('#ff4e01')//core area, orange 
   circle(0,0,150)
-  fill(0)
+  fill(0)//black
   circle(0,0,100)
-  fill('#ebff7d')
+  fill('#ebff7d')//core, yellow 
   circle(0,0,55)
-  fill(255)
+  fill(255)//mountain top,white
   triangle(0,275,-5,260,5,260)
-  fill('#928e85')
+  fill('#928e85')//mountain, grey 
   triangle (0,270,-10,250,10,250)  
-  fill(255)
+  fill(255)//mountain top,white
   triangle(0,-275,5,-260,-5,-260)
-  fill('#928e85')
+  fill('#928e85')//mountain top,white
   triangle (0,-270,10,-250,-10,-250)
   
   
@@ -128,8 +128,8 @@ function Stars (x,y, animation, pScope){
 //offset with animation.wave or different frequency 
   
 
-  strokeWeight(15 - animation.wave()* 15)
-  stroke(255)
+  strokeWeight(15 - animation.wave()* 15) //star twinkle 
+  stroke(255)//white
   scale (1 + animation.wave() * 0.01)
   point((StarLocationX[2]),(StarLocationY[3]))
   point((StarLocationX[1]),(StarLocationY[2]))
