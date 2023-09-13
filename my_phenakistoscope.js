@@ -57,7 +57,7 @@ function Moon(animation, pScope) {
   let x = r * cos(angle); //calculation to get the moon to orbit 
   let y = r * sin(angle); //same as above
   point(x, y);
-  angle += 0.25; //0.25 is optimal speed, 
+  angle += 0.25 ; //0.25 is optimal speed, 
   fill('#303B45') //darker grey 
   noStroke()
   ellipse(x - 10, y, 20, 20) //ellipse's are for moon craters 
@@ -114,7 +114,7 @@ function Planet(x, y, animation, pScope) {
   fill(0) //black
   circle(0, 0, 100)
   fill('#ebff7d') //core, yellow 
-  circle(0, 0, 55)
+  circle(0, 0, 60)
   fill(255) //mountain top,white
   triangle(0, 275, -5, 260, 5, 260)
   fill('#928e85') //mountain, grey 
