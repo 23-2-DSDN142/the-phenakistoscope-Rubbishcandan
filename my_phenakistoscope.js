@@ -1,4 +1,4 @@
-const SLICE_COUNT = 10;
+const SLICE_COUNT = 12;
 let angle = -180
 var StarLocationX = [-100,0,100,150,200,250,300]
 var StarLocationY = [-400,-500,-650,-750,-800,-900]
@@ -52,7 +52,7 @@ function Moon(animation, pScope) {
   let x = r * cos(angle);
   let y = r * sin(angle);
   point(x, y);
-  angle += 0.5; //0.5 is optimal speed 
+  angle += 0.25; //0.5 is optimal speed 
   fill('#303B45')
   noStroke()
   ellipse(x - 10, y, 20, 20)
@@ -75,10 +75,15 @@ function Planet(x, y, animation, pScope) {
   let interA = lerpColor(start,end,0.3)
   let interB = lerpColor(start,end,0.6)
   let interC = lerpColor(start,end,0.9)
- 
-  fill(255)
-  rect(-50, -325 - animation.wave() * 10, 100, 20) // .wave is a cosine wave btw
+
+  fill('#ff4e01')
+  ellipse(0, -325 - animation.wave() * 10, 0, 35)
+  fill('#FFFF00')
+  ellipse(0, -325 - animation.wave() * 10, 60, 25)
+  fill(0)
+  ellipse(0, -325 - animation.wave() * 10, 50, 15) // .wave is a cosine wave btw
   
+ 
   fill('#4287f5')
   noStroke();
   //arc(x, y, 600, 600, backgroundArcStart, backgroundArcEnd); // draws "pizza slice" in the background
